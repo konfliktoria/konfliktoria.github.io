@@ -3,7 +3,6 @@ layout: base
 ---
 
 {% include header.html type="post" %}
-{% include carousel.html %}
 
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
@@ -85,6 +84,8 @@ layout: base
         {% endif %}
       </ul>
       {% include comments.html %}
+
+      {% include carousel.html %}
     </div>
   </div>
 </main>
