@@ -37,11 +37,15 @@
             {% if page.author %}
               Von <strong>{{ page.author | strip_html }}</strong><br>
             {% endif%}
-            <span class="post-meta">Veröffentlicht am {{ page.date | date: date_format }}</span>
+            <span class="post-meta">
+              {% assign months = "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember" | split: "," %}
+              {% assign m = page.date | date: "%-m" | minus: 1 %}
+              Veröffentlicht am {{ page.date | date: "%-d" }}. {{ months[m] }} {{ page.date | date: "%Y" }}
+            </span>
             {% if page.last-updated %}
               <span class="post-meta">
                 <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
+                Zuletzt geupdated {{ page.last-updated | date: date_format }}
               </span>
             {% endif %}
             {% if page.readtime %}

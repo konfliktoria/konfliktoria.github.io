@@ -50,9 +50,11 @@ layout: page
         <span>Von <strong>{{ post.author | strip_html }}</strong></span>
       {% endif %}
       <p class="post-meta">
-        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-        Veröffentlicht am {{ post.date | date: date_format }}
+       {% assign months = "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember" | split: "," %}
+       {% assign m = post.date | date: "%-m" | minus: 1 %}
+       Veröffentlicht am {{ post.date | date: "%-d" }}. {{ months[m] }} {{ post.date | date: "%Y" }}
       </p>
+
 
       {% if thumbnail != "" %}
       <div class="post-image post-image-small">
