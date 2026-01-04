@@ -1,54 +1,57 @@
 <!-- Carousel Include for Beautiful-Jekyll -->
 {% assign image_list = include.images | split: "," %}
-
 <!-- Swiper CSS -->
 <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
-
 <style>
 .swiper {
-  width: 100%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  height: auto; /* dynamische Höhe */
+width: 100%;
+max-width: 700px; /* Kleinere maximale Breite */
+margin: 2rem auto;
+border-radius: 0.5rem;
+overflow: hidden;
+height: 500px; /* Feste Höhe für einheitliche Darstellung */
 }
-
+.swiper-slide {
+display: flex;
+align-items: center; /* Vertikal zentrieren */
+justify-content: center; /* Horizontal zentrieren */
+background-color: #f5f5f5; /* Dezenter Hintergrund */
+}
 .swiper-slide img {
-  width: 100%;
-  height: auto; /* Höhe automatisch */
-  display: block;
+max-width: 100%;
+max-height: 100%;
+width: auto; /* Seitenverhältnis beibehalten */
+height: auto; /* Seitenverhältnis beibehalten */
+object-fit: contain; /* Bild passt komplett rein ohne Beschneiden */
+display: block;
 }
 </style>
-
 <div class="swiper">
-  <div class="swiper-wrapper">
+<div class="swiper-wrapper">
     {% for img in image_list %}
-      <div class="swiper-slide">
-        <img src="{{ '/assets/img/' | append: img | relative_url }}" alt="{{ img }}">
-      </div>
-    {% endfor %}
-  </div>
-
-  <!-- Navigation -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
+<div class="swiper-slide">
+<img src="{{ '/assets/img/' | append: img | relative_url }}" alt="{{ img }}">
 </div>
-
+    {% endfor %}
+</div>
+<!-- Navigation -->
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  new Swiper(".swiper", {
-    loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+new Swiper(".swiper", {
+loop: true,
+pagination: { el: ".swiper-pagination", clickable: true },
+navigation: {
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev",
     },
   });
 });

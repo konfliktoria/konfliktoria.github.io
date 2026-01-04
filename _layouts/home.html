@@ -2,6 +2,37 @@
 layout: page
 ---
 
+<style>
+/* Quadratische Thumbnails für Blog-Posts */
+.post-image {
+  width: 100%;
+  max-width: 300px; /* Maximale Breite anpassen */
+  aspect-ratio: 1 / 1; /* Quadratisches Verhältnis */
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Bild füllt den quadratischen Rahmen aus */
+  display: block;
+}
+
+/* Optional: Zentrierte Variante mit contain statt cover */
+.post-image.centered img {
+  object-fit: contain;
+  background-color: #f5f5f5;
+}
+</style>
+
 {{ content }}
 
 {% assign posts = paginator.posts | default: site.posts %}
@@ -78,7 +109,7 @@ layout: page
         {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | absolute_url }}" class="post-read-more">[Lese&nbsp;Mehr]</a>
+          <a href="{{ post.url | absolute_url }}" class="post-read-more">[Weiterlesen]</a>
         {% endif %}
       </div>
       {% endunless %}
