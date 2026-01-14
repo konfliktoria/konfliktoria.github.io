@@ -1,58 +1,66 @@
-<!-- Carousel Include for Beautiful-Jekyll -->
 {% assign image_list = include.images | split: "," %}
-<!-- Swiper CSS -->
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
-.swiper {
-width: 100%;
-max-width: 700px; /* Kleinere maximale Breite */
-margin: 2rem auto;
-border-radius: 0.5rem;
-overflow: hidden;
-height: 500px; /* Feste Höhe für einheitliche Darstellung */
+.carousel-swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-.swiper-slide {
-display: flex;
-align-items: center; /* Vertikal zentrieren */
-justify-content: center; /* Horizontal zentrieren */
-background-color: #f5f5f5; /* Dezenter Hintergrund */
+.carousel-swiper .swiper-slide {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
 }
-.swiper-slide img {
-max-width: 100%;
-max-height: 100%;
-width: auto; /* Seitenverhältnis beibehalten */
-height: auto; /* Seitenverhältnis beibehalten */
-object-fit: contain; /* Bild passt komplett rein ohne Beschneiden */
-display: block;
+.carousel-swiper .swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 768px) {
+  .carousel-swiper {
+    max-width: 100%;
+  }
+  .carousel-swiper .swiper-slide {
+    width: 100vw;
+    height: 100vw;
+    max-height: 500px;
+    max-width: 500px;
+  }
 }
 </style>
-<div class="swiper">
-<div class="swiper-wrapper">
+<div class="swiper carousel-swiper">
+  <div class="swiper-wrapper">
     {% for img in image_list %}
-<div class="swiper-slide">
-<img src="{{ '/assets/img/' | append: img | relative_url }}" alt="{{ img }}">
-</div>
+    <div class="swiper-slide">
+      <img src="{{ '/assets/img/' | append: img | relative_url }}" alt="{{ img }}">
+    </div>
     {% endfor %}
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
 </div>
-<!-- Navigation -->
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-</div>
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-new Swiper(".swiper", {
-loop: true,
-pagination: { el: ".swiper-pagination", clickable: true },
-navigation: {
-nextEl: ".swiper-button-next",
-prevEl: ".swiper-button-prev",
-    },
+  const carouselSwipers = document.querySelectorAll('.carousel-swiper');
+  carouselSwipers.forEach(function(swiperEl) {
+    new Swiper(swiperEl, {
+      loop: true,
+      pagination: { el: swiperEl.querySelector('.swiper-pagination'), clickable: true },
+      navigation: {
+        nextEl: swiperEl.querySelector('.swiper-button-next'),
+        prevEl: swiperEl.querySelector('.swiper-button-prev'),
+      },
+    });
   });
 });
 </script>
