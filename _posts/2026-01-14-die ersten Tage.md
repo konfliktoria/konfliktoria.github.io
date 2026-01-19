@@ -12,7 +12,7 @@ readtime: true
 Die Aufregung stieg und die letzten Abschiede standen an. Der Abschied aus München am Donnerstag hat mich emotional doch mehr mitgenommen, als ich erwartet hatte, gleichzeitig wuchs aber auch die Vorfreude. Freitagabend bin ich dann von Frankfurt über Addis Abeba nach Bulawayo geflogen. Der Flughafen hier in Bulawayo ist so klein, dass ich zu Fuß über das Rollfeld zur Immigration gelaufen bin. Nachdem dann endlich mein Gepäck angekommen war, hat Juliet mich abgeholt. 
 
 Damit man bei all den Namen den Überblick behält, hier ein kurze Vorstellung von den Menschen, die auf Cawston leben und mit denen ich hauptsächlich zusammen arbeite:
-* Juliet & Shawn: die Besitzer von Cawston
+* Juliet & Sean: die Besitzer von Cawston
 * Georgie: ist für die Pferde (+Schafe & Ziegen) zuständig und macht auch das Marketing
 * Luke: ist hier für Anti-Poaching und die Kühe zuständig 
 
