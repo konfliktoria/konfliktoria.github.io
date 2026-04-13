@@ -3,8 +3,8 @@ layout: post
 title: 3 Kontinente und 6 Länder in 2 Wochen
 subtitle: Eine Reise zwischen Abschied, Wiedersehen und einem neuen Anfang.
 cover-img: /assets/img/N21.jpg
-thumbnail-img: /assets/img/N1.jpg
-share-img: /assets/img/N1.jpg
+thumbnail-img: /assets/img/N1.jpeg
+share-img: /assets/img/N1.jpeg
 author: Viki
 readtime: true
 ---
@@ -24,4 +24,4 @@ Der letzte Stop war dann in Hösel, inklusive eines kurzen Roadtrips nach Hollan
 Mit einem Zwischenstopp in London, wo ich den Tag verbracht habe bin ich jetzt in Vancouver angekommen. Es fühlt sich seltsam an, wieder hier zu sein. Alles ist fremd und gleichzeitig irgendwo vertraut. Vor 13 Jahren war ich das letzte Mal hier und vor 11 Jahren in Kanada. Verrückt, wie die Zeit fliegt. In meinem Kopf ist noch gar nicht richtig angekommen, dass ich jetzt erstmal hier leben werde.  
 Ich freue mich darauf, wenn es Mitte der Woche endlich zur Ranch geht, ich wieder reiten kann und die Arbeit beginnt. Noch fühlt sich alles ein bisschen unwirklich an.
 
-{% include carousel.html images="N1.jpg,N2.jpg,N21.jpg,N3.jpeg,N4.jpeg,N5.jpeg,N6.jpeg,N7.jpeg,N8.jpeg,N9.jpeg,N10.jpeg,N11.jpeg" %} 
+{% include carousel.html images="N1.jpeg,N2.jpg,N21.jpg,N3.jpeg,N4.jpeg,N5.jpeg,n6.jpg,N7.jpeg,N8.jpeg,N9.jpeg,N10.jpeg,N11.jpeg" %} 
