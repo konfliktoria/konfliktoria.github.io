@@ -36,3 +36,13 @@
     <script src="{{ js | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<!-- Externe Links in neuem Tab öffnen -->
+<script>
+document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+  if (a.hostname !== window.location.hostname) {
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  }
+});
+</script>
